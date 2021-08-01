@@ -1,5 +1,6 @@
 body{
     font-family: monospace;
+    margin: 10px;
 }
 
 h1{
@@ -15,4 +16,12 @@ table,th{
 .week-tab-head{
     background-color: rgb(78, 78, 78);
     color: white;
+}
+
+.btn-ongrid{
+    margin: 0 10px;
+}
+
+tr{
+    text-align: center;
 }
