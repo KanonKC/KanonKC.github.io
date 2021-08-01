@@ -29,7 +29,7 @@ for(var i=0;i<WeekList.length;i++){
         if(j==0){
             var th = document.createElement("th")
             th.innerHTML = WeekList[i].date
-            th.rowSpan = 4
+            th.rowSpan = WeekList[i].time.length
             tr.append(th)
         }
 
