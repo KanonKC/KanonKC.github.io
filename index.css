@@ -26,6 +26,10 @@ tr{
     text-align: center;
 }
 
+th{
+    padding: 5px 10px;
+}
+
 .grade-color-box{
     background-color: red;
     margin: 0px 40px 20px 40px;
