@@ -60,8 +60,6 @@ function emptyGrid(){
     }
 }
 
-plotGrid(WeekList)
-
 function plotByGrade(WeekList,grd){
     emptyGrid()
     var newList = {}
@@ -71,8 +69,75 @@ function plotByGrade(WeekList,grd){
     plotGrid(newList)
 }
 
+plotGrid(WeekList)
 grade_selector[0].addEventListener("click",function(){plotGrid(WeekList)})
 grade_selector[1].addEventListener("click",function(){plotByGrade(WeekList,4)})
 grade_selector[2].addEventListener("click",function(){plotByGrade(WeekList,5)})
 grade_selector[3].addEventListener("click",function(){plotByGrade(WeekList,6)})
 
+
+// =========================================================
+
+const SummaryTable = {
+    week_tab: document.getElementById("week-tab-2"),
+    btn_color: {
+        "Physic": "btn-primary",
+        "Chemistry": "btn-warning",
+        "Calculus": "btn-danger"
+    },
+    data:{
+        "Physic":[
+            {name:"Introduction | บทนำ",link:"https://drive.google.com/file/d/1MLjksUHVR22YB4B6fQUpETqGclEWC-l-/view?usp=sharing"},
+            {name:"Linear Motion | การเคลื่อนที่เส้นตรง",link:"https://drive.google.com/file/d/1KxK7ZTZIqVbfeXNs_T6QKWXhDzv0YCOi/view?usp=sharing"},
+            {name:"Projectile | การเคลื่อนที่แบบโปรเจกไทล์",link:"https://drive.google.com/file/d/1IWt85dgdzYH4pxCJqsB_eQtaANfPS9zr/view?usp=sharing"},
+            {name:"Solid | สมบัติของแข็ง",link:"https://drive.google.com/file/d/1AFAfAAwrdCV3bGEmdr0X6K22JFZ3AKM3/view?usp=sharing"},
+            {name:"Equilibrium | สมดุลกล",link:"https://drive.google.com/file/d/1l9JtILWsKRqaYCosnLx1W71v5MrHNyZ-/view?usp=sharing"},
+            {name:"Work Energy & Power | งาน และพลังงาน",link:"https://drive.google.com/file/d/1SZg8O73dHf0L7L8ffJ9bgep7rarnDIho/view?usp=sharing"},
+            {name:"Momentum | โมเมนตัม",link:"https://drive.google.com/file/d/1o4wsvYE1UbWBCB751tCFZ0PQcVOkdy7t/view?usp=sharing"},
+            {name:"Liquid | ของเหลว",link:"https://drive.google.com/file/d/1tFW2tKKCaNkQ7TNv9lH9N0m4LMnwUPj7/view?usp=sharing"},
+            {name:"Flow | ของไหล",link:"https://drive.google.com/file/d/11bY0T8AdtgR2us8Su56VV0d9qabZz75A/view?usp=sharing"},
+            {name:"Gas & Kinetic Energy | ทฤษฎีจลน์แก็ส",link:"https://drive.google.com/file/d/1tKdpdiVaGZUAhu9swkLY_BmH8atdOkEU/view?usp=sharing"},
+            {name:"Heat & 1St Law of Thermodynamic | ความร้อน และเทอร์โมไดนามิกส์",link:"https://drive.google.com/file/d/1jUci6KsERPta8PGVGNROCiOpUuYfP4w9/view?usp=sharing"},
+            {name:"Electrostatic | ไฟฟ้าสถิต",link:"https://drive.google.com/file/d/1ZTi7CUVeryXsOOW-b1a3HZ2zn4pgX0s8/view?usp=sharing"},
+            {name:"Direct Current | ไฟฟ้ากระแสตรง",link:"https://drive.google.com/file/d/1wQz64aR1szHHQ-i8eJHUTt4523evMux7/view?usp=sharing"},
+            {name:"Electromagnetic | แม่เหล็กไฟฟ้า",link:"https://drive.google.com/file/d/1kZJU3qo3fWrsyZjd2Z1t2igbgbb3vyAy/view?usp=sharing"},
+            {name:"Alternating Current | ไฟฟ้ากระแสสลับ",link:"https://drive.google.com/file/d/1iLEieDQCxndLbCJQVlwgy_3SV370AODA/view?usp=sharing"},
+        ],
+        "Chemistry":[
+            {name:"Electrochemistry | ไฟฟ้าเคมี",link:"https://drive.google.com/file/d/1JbXivM3dYulvmt0O7763xLKgAYGI9Dbe/view?usp=sharing"},
+            {name:"Organic Chemistry | เคมีอินทรีย์",link:"https://drive.google.com/file/d/1W91Sun-Z0f2uK9iAZeoemUWYt2rzY2Vo/view?usp=sharing"},
+        ],
+        "Calculus":[
+            {name:"Polar Coordinate | ระบบพิกัดเชิงขั้ว",link:"https://drive.google.com/file/d/13XulWtumJOPqI_rXrsCIXTl1FUZoj8sn/view?usp=sharing"},
+            {name:"Series | อนุกรม",link:"https://drive.google.com/file/d/1fLH_FlJ60fS1CHDCOKTGU8c4A6paWdXq/view?usp=sharing"},
+        ]
+    },
+    plotGrid: function(){
+        for(var i in this.data){
+            for(var j=0;j<this.data[i].length;j++){
+                var tr = document.createElement("tr")
+                if(j==0){
+                    var th = document.createElement("th")
+                        th.innerHTML = i
+                        th.rowSpan = this.data[i].length
+                    tr.append(th)
+                }
+
+                var th = document.createElement("th")
+                var btn = document.createElement("button")
+                    btn.classList.add("btn")
+                    btn.classList.add(this.btn_color[i])
+                    btn.link = this.data[i][j].link
+                    btn.innerHTML = this.data[i][j].name
+                    btn.addEventListener("click",function(){
+                        window.location = this.link
+                    })
+                th.append(btn)
+                tr.append(th)
+                this.week_tab.append(tr)
+            }
+        }
+    }
+}
+
+SummaryTable.plotGrid()
