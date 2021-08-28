@@ -2,11 +2,37 @@ var week_tab = document.getElementById("week-tab")
 var grade_selector = document.getElementsByClassName("grade-selector")
 
 const WeekList = {
+    /* DATA STRUCTURE
+    "00/00/2021":[
+        {time:"08:30-10:30",grade:6,subject:"Chemistry",name:"",
+        link:""},
+        {time:"10:30-12:30",grade:5,subject:"Chemistry",name:" - ",
+        link:""},
+        {time:"13:30-15:30",grade:5,subject:"Mathematic",name:" - ",
+        link:""},
+        {time:"15:30-17:30",grade:4,subject:"Chemistry",name:" - ",
+        link:""}
+    ],
+    */
+    "28/08/2021":[
+        {time:"08:30-10:30",grade:6,subject:"Chemistry",name:"แนวข้อสอบสามัญ ชุด 3 (18-50)",
+        link:"https://drive.google.com/file/d/1V457VRNG4kWp6wJJH-e8BGnns5YoiNtj/view?usp=sharing"},
+        {time:"10:30-12:30",grade:5,subject:"Chemistry",name:"Rate Of Reaction | Introduction",
+        link:"https://drive.google.com/file/d/1Nj9EzEiIHW7gfxEHqPJYtJ_ZSlkwrOe6/view?usp=sharing"},
+        {time:"13:30-15:30",grade:5,subject:"Mathematic",name:"Probability | Combination",
+        link:"https://drive.google.com/file/d/1BSdlqcgQSxIYp7wv_mW2ViRwGwG9IgOW/view?usp=sharing"},
+        {time:"15:30-17:30",grade:4,subject:"Chemistry",name:" - ",
+        link:""}
+    ],
     "31/07/2021":[
-        {time:"08:30-10:30",grade:6,subject:"Chemistry",name:"PAT2 ชุด 3 (14-39)",link:"https://drive.google.com/file/d/17tw61Av15NOWQAS695OSJSDRad6fH5-A/view?usp=sharing"},
-        {time:"10:30-12:30",grade:5,subject:"Chemistry",name:"Stoichiometry II | Colligative Properties",link:"https://drive.google.com/file/d/1lvctRd7rb27Nw0NgwFWNwQ_bnfPllDcG/view?usp=sharing"},
-        {time:"13:30-15:30",grade:5,subject:"Mathematic",name:"Probability | Combination",link:"https://drive.google.com/file/d/1gVkxxLm_-DIsSIPZgWJwLMEe2CygIqXK/view?usp=sharing"},
-        {time:"15:30-17:30",grade:4,subject:"Chemistry",name:"Stoichiometry | มวลอะตอมเฉลี่ย + กฎทรงมวล",link:"https://drive.google.com/file/d/1lFwzPisP2HFV8PQNSElz4ryJpyArDzrG/view?usp=sharing"}
+        {time:"08:30-10:30",grade:6,subject:"Chemistry",name:"PAT2 ชุด 3 (14-39)",
+        link:"https://drive.google.com/file/d/17tw61Av15NOWQAS695OSJSDRad6fH5-A/view?usp=sharing"},
+        {time:"10:30-12:30",grade:5,subject:"Chemistry",name:"Stoichiometry II | Colligative Properties",
+        link:"https://drive.google.com/file/d/1lvctRd7rb27Nw0NgwFWNwQ_bnfPllDcG/view?usp=sharing"},
+        {time:"13:30-15:30",grade:5,subject:"Mathematic",name:"Probability | Combination",
+        link:"https://drive.google.com/file/d/1gVkxxLm_-DIsSIPZgWJwLMEe2CygIqXK/view?usp=sharing"},
+        {time:"15:30-17:30",grade:4,subject:"Chemistry",name:"Stoichiometry | มวลอะตอมเฉลี่ย + กฎทรงมวล",
+        link:"https://drive.google.com/file/d/1lFwzPisP2HFV8PQNSElz4ryJpyArDzrG/view?usp=sharing"}
     ],
 }
 
