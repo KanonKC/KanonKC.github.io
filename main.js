@@ -20,7 +20,7 @@ const WeekList = {
         {time:"10:30-12:30",grade:5,subject:"Chemistry",name:"Rate Of Reaction | Introduction",
         link:"https://drive.google.com/file/d/1Nj9EzEiIHW7gfxEHqPJYtJ_ZSlkwrOe6/view?usp=sharing"},
         {time:"13:30-15:30",grade:5,subject:"Mathematic",name:"Probability | Combination",
-        link:"https://github.com/KanonKC/mint-tutor-file/raw/main/M52564M%20%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%99%E0%B9%88%E0%B8%B2%E0%B8%88%E0%B8%B0%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%20II.pdf"},
+        link:"https://github.com/KanonKC/mint-tutor-file/raw/main/M42564C15%20Stoi%20II.pdf"},
         {time:"15:30-17:30",grade:4,subject:"Chemistry",name:" - ",
         link:""}
     ],
