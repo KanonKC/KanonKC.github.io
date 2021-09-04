@@ -4,7 +4,7 @@ var grade_selector = document.getElementsByClassName("grade-selector")
 const WeekList = {
     /* DATA STRUCTURE
     "00/00/2021":[
-        {time:"08:30-10:30",grade:6,subject:"Chemistry",name:"",
+        {time:"08:30-10:30",grade:6,subject:"Chemistry",name:" - ",
         link:""},
         {time:"10:30-12:30",grade:5,subject:"Chemistry",name:" - ",
         link:""},
@@ -14,6 +14,16 @@ const WeekList = {
         link:""}
     ],
     */
+    "04/09/2021":[
+        {time:"08:30-10:30",grade:6,subject:"Chemistry",name:"แนวข้อสอบสามัญ ชุด 5 (18-50)",
+        link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210904/Chem%2030%203%204-9-2021%20(2).pdf"},
+        {time:"10:30-12:30",grade:5,subject:"Chemistry",name:"Rate Of Reaction | อัตราการเกิดปฏิกริยาเคมี",
+        link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210904/M52564C12%20Rate%20of%20Reaction.pdf"},
+        {time:"13:30-15:30",grade:5,subject:"Mathematic",name:" - ",
+        link:""},
+        {time:"15:30-17:30",grade:4,subject:"Chemistry",name:" - ",
+        link:""}
+    ],
     "03/09/2021":[
         {time:"18:30-20:30",grade:5,subject:"Mathematic",name:"Vector | โจทย์ชุดที่ 3",
         link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210903/vector_3d.pdf"}
