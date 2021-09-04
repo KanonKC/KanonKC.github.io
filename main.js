@@ -1,122 +1,242 @@
-var week_tab = document.getElementById("week-tab")
-var grade_selector = document.getElementsByClassName("grade-selector")
+// var week_tab = document.getElementById("week-tab")
+// var grade_selector = document.getElementsByClassName("grade-selector")
 
-const WeekList = {
-    /* DATA STRUCTURE
-    "00/00/2021":[
-        {time:"08:30-10:30",grade:6,subject:"Chemistry",name:" - ",
-        link:""},
-        {time:"10:30-12:30",grade:5,subject:"Chemistry",name:" - ",
-        link:""},
-        {time:"13:30-15:30",grade:5,subject:"Mathematic",name:" - ",
-        link:""},
-        {time:"15:30-17:30",grade:4,subject:"Chemistry",name:" - ",
-        link:""}
-    ],
-    */
-    "04/09/2021":[
-        {time:"08:30-10:30",grade:6,subject:"Chemistry",name:"แนวข้อสอบสามัญ ชุด 5 (18-50)",
-        link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210904/Chem%2030%203%204-9-2021%20(2).pdf"},
-        {time:"10:30-12:30",grade:5,subject:"Chemistry",name:"Rate Of Reaction | อัตราการเกิดปฏิกริยาเคมี",
-        link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210904/M52564C12%20Rate%20of%20Reaction.pdf"},
-        {time:"13:30-15:30",grade:5,subject:"Mathematic",name:" - ",
-        link:""},
-        {time:"15:30-17:30",grade:4,subject:"Chemistry",name:" - ",
-        link:""}
-    ],
-    "03/09/2021":[
-        {time:"18:30-20:30",grade:5,subject:"Mathematic",name:"Vector | โจทย์ชุดที่ 3",
-        link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210903/vector_3d.pdf"}
-    ],
-    "28/08/2021":[
-        {time:"08:30-10:30",grade:6,subject:"Chemistry",name:"แนวข้อสอบสามัญ ชุด 3 (18-50)",
-        link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210829/chem%20%2023%2027%2028-8-2021.pdf"},
-        {time:"10:30-12:30",grade:5,subject:"Chemistry",name:"Rate Of Reaction | Introduction",
-        link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210829/M52564C12%20Rate%20of%20Reaction.pdf"},
-        {time:"13:30-15:30",grade:5,subject:"Mathematic",name:"Probability | Combination",
-        link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210829/M52564M%20Probability.pdf"},
-        {time:"15:30-17:30",grade:4,subject:"Chemistry",name:"Stoichiometry II | การเตรียมความเข้มข้น",
-        link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210829/M42564C15%20Stoi%20II.pdf"}
-    ],
-    "31/07/2021":[
-        {time:"08:30-10:30",grade:6,subject:"Chemistry",name:"PAT2 ชุด 3 (14-39)",
-        link:"https://drive.google.com/file/d/17tw61Av15NOWQAS695OSJSDRad6fH5-A/view?usp=sharing"},
-        {time:"10:30-12:30",grade:5,subject:"Chemistry",name:"Stoichiometry II | Colligative Properties",
-        link:"https://drive.google.com/file/d/1lvctRd7rb27Nw0NgwFWNwQ_bnfPllDcG/view?usp=sharing"},
-        {time:"13:30-15:30",grade:5,subject:"Mathematic",name:"Probability | Combination",
-        link:"https://drive.google.com/file/d/1gVkxxLm_-DIsSIPZgWJwLMEe2CygIqXK/view?usp=sharing"},
-        {time:"15:30-17:30",grade:4,subject:"Chemistry",name:"Stoichiometry | มวลอะตอมเฉลี่ย + กฎทรงมวล",
-        link:"https://drive.google.com/file/d/1lFwzPisP2HFV8PQNSElz4ryJpyArDzrG/view?usp=sharing"}
-    ],
-}
+// const WeekList = {
+//     /* DATA STRUCTURE
+//     "00/00/2021":[
+//         {time:"08:30-10:30",grade:6,subject:"Chemistry",name:" - ",
+//         link:""},
+//         {time:"10:30-12:30",grade:5,subject:"Chemistry",name:" - ",
+//         link:""},
+//         {time:"13:30-15:30",grade:5,subject:"Mathematic",name:" - ",
+//         link:""},
+//         {time:"15:30-17:30",grade:4,subject:"Chemistry",name:" - ",
+//         link:""}
+//     ],
+//     */
+//     "04/09/2021":[
+//         {time:"08:30-10:30",grade:6,subject:"Chemistry",name:"แนวข้อสอบสามัญ ชุด 5 (18-50)",
+//         link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210904/Chem%2030%203%204-9-2021%20(2).pdf"},
+//         {time:"10:30-12:30",grade:5,subject:"Chemistry",name:"Rate Of Reaction | อัตราการเกิดปฏิกริยาเคมี",
+//         link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210904/M52564C12%20Rate%20of%20Reaction.pdf"},
+//         {time:"13:30-15:30",grade:5,subject:"Mathematic",name:" - ",
+//         link:""},
+//         {time:"15:30-17:30",grade:4,subject:"Chemistry",name:" - ",
+//         link:""}
+//     ],
+//     "03/09/2021":[
+//         {time:"18:30-20:30",grade:5,subject:"Mathematic",name:"Vector | โจทย์ชุดที่ 3",
+//         link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210903/vector_3d.pdf"}
+//     ],
+//     "28/08/2021":[
+//         {time:"08:30-10:30",grade:6,subject:"Chemistry",name:"แนวข้อสอบสามัญ ชุด 3 (18-50)",
+//         link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210829/chem%20%2023%2027%2028-8-2021.pdf"},
+//         {time:"10:30-12:30",grade:5,subject:"Chemistry",name:"Rate Of Reaction | Introduction",
+//         link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210829/M52564C12%20Rate%20of%20Reaction.pdf"},
+//         {time:"13:30-15:30",grade:5,subject:"Mathematic",name:"Probability | Combination",
+//         link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210829/M52564M%20Probability.pdf"},
+//         {time:"15:30-17:30",grade:4,subject:"Chemistry",name:"Stoichiometry II | การเตรียมความเข้มข้น",
+//         link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210829/M42564C15%20Stoi%20II.pdf"}
+//     ],
+//     "31/07/2021":[
+//         {time:"08:30-10:30",grade:6,subject:"Chemistry",name:"PAT2 ชุด 3 (14-39)",
+//         link:"https://drive.google.com/file/d/17tw61Av15NOWQAS695OSJSDRad6fH5-A/view?usp=sharing"},
+//         {time:"10:30-12:30",grade:5,subject:"Chemistry",name:"Stoichiometry II | Colligative Properties",
+//         link:"https://drive.google.com/file/d/1lvctRd7rb27Nw0NgwFWNwQ_bnfPllDcG/view?usp=sharing"},
+//         {time:"13:30-15:30",grade:5,subject:"Mathematic",name:"Probability | Combination",
+//         link:"https://drive.google.com/file/d/1gVkxxLm_-DIsSIPZgWJwLMEe2CygIqXK/view?usp=sharing"},
+//         {time:"15:30-17:30",grade:4,subject:"Chemistry",name:"Stoichiometry | มวลอะตอมเฉลี่ย + กฎทรงมวล",
+//         link:"https://drive.google.com/file/d/1lFwzPisP2HFV8PQNSElz4ryJpyArDzrG/view?usp=sharing"}
+//     ],
+// }
 
-function plotGrid(WeekList){
-    emptyGrid()
-    for(var i in WeekList){
-        for(var j=0;j<WeekList[i].length;j++){
-            var tr = document.createElement("tr")
-            if(j==0){
+// function plotGrid(WeekList){
+//     emptyGrid()
+//     for(var i in WeekList){
+//         for(var j=0;j<WeekList[i].length;j++){
+//             var tr = document.createElement("tr")
+//             if(j==0){
+//                 var th = document.createElement("th")
+//                     th.classList.add("mint-th")
+//                     th.innerHTML = i
+//                     th.rowSpan = WeekList[i].length
+//                     tr.append(th)
+//             }
+
+//             var th = document.createElement("th")
+//                 th.classList.add("mint-th")
+//                 th.innerHTML = WeekList[i][j].time
+//                 tr.append(th)
+
+//             var th = document.createElement("th")
+//                 th.classList.add("mint-th")
+//                 th.innerHTML = WeekList[i][j].subject
+//                 tr.append(th)
+
+//             var th = document.createElement("th")
+//                 th.classList.add("mint-th")
+//             var btn = document.createElement("button")
+//                 btn.innerHTML = WeekList[i][j].name
+//                 btn.link = WeekList[i][j].link
+//                 btn.classList.add("btn")
+//                 var grade_color = ["","","","btn-warning","btn-primary","btn-danger"]
+//                 btn.classList.add(grade_color[WeekList[i][j].grade-1])
+//                 btn.classList.add("btn-ongrid")
+//                 btn.addEventListener("click",function(){
+//                     window.location = this.link
+//                 })
+//             th.append(btn)
+//             tr.append(th)
+
+//             week_tab.append(tr)
+//         }
+//     }
+// }
+
+// function emptyGrid(){
+//     var th = document.getElementsByClassName("mint-th")
+//     for(var i=th.length-1;i>=0;i--){
+//         th[i].remove()
+//     }
+// }
+
+// function plotByGrade(WeekList,grd){
+//     emptyGrid()
+//     var newList = {}
+//     for(var i in WeekList){
+//         newList[i] = WeekList[i].filter((g)=>g.grade==grd)
+//     }
+//     plotGrid(newList)
+// }
+
+// plotGrid(WeekList)
+// grade_selector[0].addEventListener("click",function(){plotGrid(WeekList)})
+// grade_selector[1].addEventListener("click",function(){plotByGrade(WeekList,4)})
+// grade_selector[2].addEventListener("click",function(){plotByGrade(WeekList,5)})
+// grade_selector[3].addEventListener("click",function(){plotByGrade(WeekList,6)})
+
+// const axios = require('axios')
+
+const RevisionFile = {
+    week_tab: document.getElementById("week-tab"),
+    grade_selector: document.getElementsByClassName("grade-selector"),
+    data: {
+        /* DATA STRUCTURE
+        "00/00/2021":[
+            {time:"08:30-10:30",grade:6,subject:"Chemistry",name:" - ",
+            link:""},
+            {time:"10:30-12:30",grade:5,subject:"Chemistry",name:" - ",
+            link:""},
+            {time:"13:30-15:30",grade:5,subject:"Mathematic",name:" - ",
+            link:""},
+            {time:"15:30-17:30",grade:4,subject:"Chemistry",name:" - ",
+            link:""}
+        ],
+        */
+        "04/09/2021":[
+            {time:"08:30-10:30",grade:6,subject:"Chemistry",name:"แนวข้อสอบสามัญ ชุด 5 (18-50)",
+            link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210904/Chem%2030%203%204-9-2021%20(2).pdf"},
+            {time:"10:30-12:30",grade:5,subject:"Chemistry",name:"Rate Of Reaction | อัตราการเกิดปฏิกริยาเคมี",
+            link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210904/M52564C12%20Rate%20of%20Reaction.pdf"},
+            {time:"13:30-15:30",grade:5,subject:"Mathematic",name:"Probability | Binomial Theorem",
+            link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210904/M52564M%20Probability(1).pdf"},
+            {time:"15:30-17:30",grade:4,subject:"Chemistry",name:" - ",
+            link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210904/M42564C15%20Stoi%20II(1).pdf"}
+        ],
+        "03/09/2021":[
+            {time:"18:30-20:30",grade:5,subject:"Mathematic",name:"Vector | โจทย์ชุดที่ 3",
+            link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210903/vector_3d.pdf"}
+        ],
+        "28/08/2021":[
+            {time:"08:30-10:30",grade:6,subject:"Chemistry",name:"แนวข้อสอบสามัญ ชุด 3 (18-50)",
+            link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210829/chem%20%2023%2027%2028-8-2021.pdf"},
+            {time:"10:30-12:30",grade:5,subject:"Chemistry",name:"Rate Of Reaction | Introduction",
+            link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210829/M52564C12%20Rate%20of%20Reaction.pdf"},
+            {time:"13:30-15:30",grade:5,subject:"Mathematic",name:"Probability | Combination",
+            link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210829/M52564M%20Probability.pdf"},
+            {time:"15:30-17:30",grade:4,subject:"Chemistry",name:"Stoichiometry II | การเตรียมความเข้มข้น",
+            link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210829/M42564C15%20Stoi%20II.pdf"}
+        ],
+        "31/07/2021":[
+            {time:"08:30-10:30",grade:6,subject:"Chemistry",name:"PAT2 ชุด 3 (14-39)",
+            link:"https://drive.google.com/file/d/17tw61Av15NOWQAS695OSJSDRad6fH5-A/view?usp=sharing"},
+            {time:"10:30-12:30",grade:5,subject:"Chemistry",name:"Stoichiometry II | Colligative Properties",
+            link:"https://drive.google.com/file/d/1lvctRd7rb27Nw0NgwFWNwQ_bnfPllDcG/view?usp=sharing"},
+            {time:"13:30-15:30",grade:5,subject:"Mathematic",name:"Probability | Combination",
+            link:"https://drive.google.com/file/d/1gVkxxLm_-DIsSIPZgWJwLMEe2CygIqXK/view?usp=sharing"},
+            {time:"15:30-17:30",grade:4,subject:"Chemistry",name:"Stoichiometry | มวลอะตอมเฉลี่ย + กฎทรงมวล",
+            link:"https://drive.google.com/file/d/1lFwzPisP2HFV8PQNSElz4ryJpyArDzrG/view?usp=sharing"}
+        ],
+    },
+    plotGrid: function(obj_data = this.data){
+        this.emptyGrid()
+        for(var i in obj_data){
+            for(var j=0;j<obj_data[i].length;j++){
+                var tr = document.createElement("tr")
+                if(j==0){
+                    var th = document.createElement("th")
+                        th.classList.add("mint-th")
+                        th.innerHTML = i
+                        th.rowSpan = obj_data[i].length
+                        tr.append(th)
+                }
+    
                 var th = document.createElement("th")
                     th.classList.add("mint-th")
-                    th.innerHTML = i
-                    th.rowSpan = WeekList[i].length
+                    th.innerHTML = obj_data[i][j].time
                     tr.append(th)
+    
+                var th = document.createElement("th")
+                    th.classList.add("mint-th")
+                    th.innerHTML = obj_data[i][j].subject
+                    tr.append(th)
+    
+                var th = document.createElement("th")
+                    th.classList.add("mint-th")
+                var btn = document.createElement("button")
+                    btn.innerHTML = obj_data[i][j].name
+                    btn.link = obj_data[i][j].link
+                    btn.classList.add("btn")
+                    var grade_color = ["","","","btn-warning","btn-primary","btn-danger"]
+                    btn.classList.add(grade_color[obj_data[i][j].grade-1])
+                    btn.classList.add("btn-ongrid")
+                    btn.addEventListener("click",function(){
+                        window.location = this.link
+                    })
+                th.append(btn)
+                tr.append(th)
+    
+                this.week_tab.append(tr)
             }
-
-            var th = document.createElement("th")
-                th.classList.add("mint-th")
-                th.innerHTML = WeekList[i][j].time
-                tr.append(th)
-
-            var th = document.createElement("th")
-                th.classList.add("mint-th")
-                th.innerHTML = WeekList[i][j].subject
-                tr.append(th)
-
-            var th = document.createElement("th")
-                th.classList.add("mint-th")
-            var btn = document.createElement("button")
-                btn.innerHTML = WeekList[i][j].name
-                btn.link = WeekList[i][j].link
-                btn.classList.add("btn")
-                var grade_color = ["","","","btn-warning","btn-primary","btn-danger"]
-                btn.classList.add(grade_color[WeekList[i][j].grade-1])
-                btn.classList.add("btn-ongrid")
-                btn.addEventListener("click",function(){
-                    window.location = this.link
-                })
-            th.append(btn)
-            tr.append(th)
-
-            week_tab.append(tr)
         }
+    },
+    emptyGrid: function(){
+        var th = document.getElementsByClassName("mint-th")
+        for(var i=th.length-1;i>=0;i--){
+            th[i].remove()
+        }
+        for(var i=1;i<this.week_tab.rows.length;i++){
+            this.week_tab.rows[1].remove()
+        }
+    },
+    plotByGrade: function(grd){
+        this.emptyGrid()
+        var newList = {}
+        for(var i in this.data){
+            newList[i] = this.data[i].filter((g)=>g.grade==grd)
+        }
+        this.plotGrid(newList)
     }
 }
 
-function emptyGrid(){
-    var th = document.getElementsByClassName("mint-th")
-    for(var i=th.length-1;i>=0;i--){
-        th[i].remove()
-    }
-}
 
-function plotByGrade(WeekList,grd){
-    emptyGrid()
-    var newList = {}
-    for(var i in WeekList){
-        newList[i] = WeekList[i].filter((g)=>g.grade==grd)
-    }
-    plotGrid(newList)
-}
+RevisionFile.plotGrid()
+RevisionFile.grade_selector[0].addEventListener("click",function(){RevisionFile.plotGrid()})
+RevisionFile.grade_selector[1].addEventListener("click",function(){RevisionFile.plotByGrade(4)})
+RevisionFile.grade_selector[2].addEventListener("click",function(){RevisionFile.plotByGrade(5)})
+RevisionFile.grade_selector[3].addEventListener("click",function(){RevisionFile.plotByGrade(6)})
 
-plotGrid(WeekList)
-grade_selector[0].addEventListener("click",function(){plotGrid(WeekList)})
-grade_selector[1].addEventListener("click",function(){plotByGrade(WeekList,4)})
-grade_selector[2].addEventListener("click",function(){plotByGrade(WeekList,5)})
-grade_selector[3].addEventListener("click",function(){plotByGrade(WeekList,6)})
-
-
-// =========================================================
+// ==================================================================================================================
 
 const SummaryTable = {
     week_tab: document.getElementById("week-tab-2"),
@@ -181,3 +301,5 @@ const SummaryTable = {
 }
 
 SummaryTable.plotGrid()
+
+// ==================================================================================================================
