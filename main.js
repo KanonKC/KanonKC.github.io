@@ -140,7 +140,7 @@ const RevisionFile = {
             link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210904/M52564C12%20Rate%20of%20Reaction.pdf"},
             {time:"13:30-15:30",grade:5,subject:"Mathematic",name:"Probability | Binomial Theorem",
             link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210904/M52564M%20Probability(1).pdf"},
-            {time:"15:30-17:30",grade:4,subject:"Chemistry",name:" - ",
+            {time:"15:30-17:30",grade:4,subject:"Chemistry",name:"Stoichiometry II | การผสมสารความเข้มข้นต่างกัน",
             link:"https://github.com/KanonKC/Mint-Tutor-File/raw/main/20210904/M42564C15%20Stoi%20II(1).pdf"}
         ],
         "03/09/2021":[
